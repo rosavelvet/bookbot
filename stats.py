@@ -1,14 +1,27 @@
-def get_word_count(book):
-    words = book.split()
+def get_word_count(text):
+    words = text.split()
     return len(words)
 
 
-def get_symbol_count(book):
-    symbols = {}
-    for symbol in book:
-        low_symbol = symbol.lower()
-        if low_symbol in symbols:
-            symbols[low_symbol] += 1
+def get_char_count(text):
+    chars = {}
+    for c in text:
+        lowered = c.lower()
+        if lowered in chars:
+            chars[lowered] += 1
             continue
-        symbols[low_symbol] = 1
-    return symbols
+        chars[lowered] = 1
+    return chars
+
+
+def sort_dictionary(dictionary):
+    list = []
+    for c in dictionary:
+        list.append({"char": c, "num": dictionary[c]})
+    list.sort(key=get_num_char, reverse=True)
+    return list
+
+
+def get_num_char(dictionary):
+    for n in dictionary:
+        return(dictionary["num"])
