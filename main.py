@@ -9,7 +9,8 @@ def main():
     book_path = "./books/frankenstein.txt"
     text = get_book_text(book_path)
     words_count = get_word_count(text)
-    chars_sorted_list = sort_dictionary(get_char_count(text))
+    chars_dict = get_char_count(text)
+    chars_sorted_list = sort_dictionary(chars_dict)
     print("=========BOOKBOT=========")
     print("-----------Word Count-----------")
     print(f"Found {words_count} total words")

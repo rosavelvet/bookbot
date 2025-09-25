@@ -15,13 +15,12 @@ def get_char_count(text):
 
 
 def sort_dictionary(dictionary):
-    list = []
+    sorted_list = []
     for c in dictionary:
-        list.append({"char": c, "num": dictionary[c]})
-    list.sort(key=get_num_char, reverse=True)
-    return list
+        sorted_list.append({"char": c, "num": dictionary[c]})
+    sorted_list.sort(key=get_num_char, reverse=True)
+    return sorted_list
 
 
 def get_num_char(dictionary):
-    for n in dictionary:
-        return(dictionary["num"])
+    return dictionary["num"]
